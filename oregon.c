@@ -5,7 +5,6 @@
 // - K 
 
 #include <stdio.h>
-//#include <ctype.h>
 #include <string.h>
 
 int main() {
@@ -78,15 +77,51 @@ int main() {
         southPassClearInSettingMileageFlag == M9 FLAG FOR CLEARING SOUTH PASS IN SETTING MILEAGE [???]
         turnNumberDateSet == D3 TURN NUMBER FOR SETTING DATE
     */
+    printf("\n\n");
+    int animalSpending; // animalSpending == A.
+    while(1){
+        printf("HOW MUCH DO YOU WANT TO SPEND ON YOUR OXEN TEAM\n"); // 850
+        // 860 INPUT A - "amount spent on animals"
+        scanf("%d", &animalSpending);
 
-    printf("\n\nHOW MUCH DO YOU WANT TO SPEND ON YOUR OXEN TEAM\n"); // 850
+        if(animalSpending<200){
+            printf("NOT ENOUGH\n");
+        }
+        else if(animalSpending>300){
+            printf("TOO MUCH\n");
+        }
+        else if(animalSpending>=200 && animalSpending<=300){
+            break;
+        }
+    } // end 920
+
+// 930 PRINT "HOW MUCH DO YOU WANT TO SPEND ON FOOD";
+    int foodSpending; // foodSpending == F.
+    while(1){
+        printf("HOW MUCH DO YOU WANT TO SPEND ON FOOD\n"); // 930
+        scanf("%d", &foodSpending);
+        if(foodSpending<=0){
+            printf("IMPOSSIBLE\n");
+        }
+        else if(foodSpending>0){
+            break;
+        }
+    } // end 970
 
 
+
+
+
+    
     //printf("\n");
     return 0;
 }
 
-
+// 930 PRINT "HOW MUCH DO YOU WANT TO SPEND ON FOOD";
+// 940 INPUT F
+// 950 IF F >= 0 THEN 980
+// 960 PRINT "IMPOSSIBLE"
+// 970 GOTO 930
 
 // --------------------------
 // printf("\n");
