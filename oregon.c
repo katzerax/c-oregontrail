@@ -77,42 +77,97 @@ int main() {
         southPassClearInSettingMileageFlag == M9 FLAG FOR CLEARING SOUTH PASS IN SETTING MILEAGE [???]
         turnNumberDateSet == D3 TURN NUMBER FOR SETTING DATE
     */
-    printf("\n\n");
-    int animalSpending; // animalSpending == A.
-    while(1){
-        printf("HOW MUCH DO YOU WANT TO SPEND ON YOUR OXEN TEAM\n"); // 850
-        // 860 INPUT A - "amount spent on animals"
-        scanf("%d", &animalSpending);
-
-        if(animalSpending<200){
-            printf("NOT ENOUGH\n");
-        }
-        else if(animalSpending>300){
-            printf("TOO MUCH\n");
-        }
-        else if(animalSpending>=200 && animalSpending<=300){
-            break;
-        }
-    } // end 920
-
-// 930 PRINT "HOW MUCH DO YOU WANT TO SPEND ON FOOD";
-    int foodSpending; // foodSpending == F.
-    while(1){
-        printf("HOW MUCH DO YOU WANT TO SPEND ON FOOD\n"); // 930
-        scanf("%d", &foodSpending);
-        if(foodSpending<=0){
-            printf("IMPOSSIBLE\n");
-        }
-        else if(foodSpending>0){
-            break;
-        }
-    } // end 970
-
-
-
-
-
     
+    
+    while(1){
+        printf("\n\n"); // 830
+        int animalSpending; // animalSpending == A.
+        while(1){
+            printf("HOW MUCH DO YOU WANT TO SPEND ON YOUR OXEN TEAM\n"); // 850
+            // 860 INPUT A - "amount spent on animals"
+            scanf("%d", &animalSpending);
+
+            if(animalSpending<200){
+                printf("NOT ENOUGH\n");
+            }
+            else if(animalSpending>300){
+                printf("TOO MUCH\n");
+            }
+            else if(animalSpending>=200 && animalSpending<=300){
+                break;
+            }
+        } // end 920
+
+    // 930 PRINT "HOW MUCH DO YOU WANT TO SPEND ON FOOD";
+        int foodSpending; // foodSpending == F.
+        while(1){
+            printf("HOW MUCH DO YOU WANT TO SPEND ON FOOD\n"); // 930
+            scanf("%d", &foodSpending);
+            if(foodSpending<0){
+                printf("IMPOSSIBLE\n");
+            }
+            else if(foodSpending>=0){
+                break;
+            }
+        } // end 970
+
+
+    // 980 PRINT "HOW MUCH DO YOU WANT TO SPEND ON AMMUNITION";
+        int ammoSpending; // ammoSpending == B.
+        while(1){
+            printf("HOW MUCH DO YOU WANT TO SPEND ON AMMUNITION\n"); // 980
+            scanf("%d", &ammoSpending);
+            if(ammoSpending<0){
+                printf("IMPOSSIBLE\n");
+            }
+            else if(ammoSpending>=0){
+                break;
+            }
+        } // end 1020
+
+
+    // 1030 PRINT "HOW MUCH DO YOU WANT TO SPEND ON CLOTHING";
+        int clothingSpending; // clothingpending == C.
+        while(1){
+            printf("HOW MUCH DO YOU WANT TO SPEND ON CLOTHING\n"); // 1030
+            scanf("%d", &clothingSpending);
+            if(clothingSpending<0){
+                printf("IMPOSSIBLE\n");
+            }
+            else if(clothingSpending>=0){
+                break;
+            }
+        } // end 1070
+        
+    // 1080 PRINT "HOW MUCH DO YOU WANT TO SPEND ON MISCELLANEOUS SUPPLIES";
+        int miscSpending; // miscSpending == M1.
+        while(1){
+            printf("HOW MUCH DO YOU WANT TO SPEND ON MISCELLANEOUS SUPPLIES\n"); // 1080
+            scanf("%d", &miscSpending);
+            if(miscSpending<0){
+                printf("IMPOSSIBLE\n");
+            }
+            else if(miscSpending>=0){
+                break;
+            }
+        } // end 1120
+
+    // 1130 T=700-A-F-B-C-M1
+        int cashLeft = 700-animalSpending-foodSpending-ammoSpending-clothingSpending-miscSpending; // cashLeft == T
+        //printf("You have %d left", cashLeft); // DEBUG
+        // 1140 IF T >= 0 THEN 1170
+        // 1150 PRINT "YOU OVERSPENT--YOU ONLY HAD $700 TO SPEND.  BUY AGAIN"
+        // 1160 GOTO 830 -> restart entire buy process
+        if(cashLeft<0){
+            printf("YOU OVERSPENT--YOU ONLY HAD $700 TO SPEND.  BUY AGAIN\n");
+        }
+        else if(cashLeft>=0){
+            break;
+        }
+    }
+    //printf("debug: broke loop");
+    // 1170 B=50*B
+
     //printf("\n");
     return 0;
 }
