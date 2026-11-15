@@ -289,7 +289,12 @@ int setDate() { // intended to deal with
 // 1260 PRINT
 // 1270 PRINT "MONDAY ";
     printf("\n");
-    return 0;
+
+    switch(turnNumberDateSet){
+        case 0: // might need to be 1
+            printf("APRIL 12\n");
+        //etc
+    }
 // 1280 IF D3>10 THEN 1300
 // 1290 ON D3 GOTO 1310,1330,1350,1370,1390,1410,1430,1450,1470,1490
 // 1300 ON D3-10 GOTO 1510,1530,1550,1570,1590,1610,1630,1650,1670,1690
@@ -334,6 +339,7 @@ int setDate() { // intended to deal with
 // 1690 PRINT "YOU HAVE BEEN ON THE TRAIL TOO LONG  ------"
 // 1700 PRINT "YOUR FAMILY DIES IN THE FIRST BLIZZARD OF WINTER"
 // 1710 GOTO 5170
+    return 0;
 }
 // --------------------------
 // printf("\n");
