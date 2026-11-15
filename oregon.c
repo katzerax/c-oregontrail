@@ -172,7 +172,7 @@ int main() {
     printf("AFTER ALL YOUR PURCHASES, YOU NOW HAVE \"%d\" DOLLARS LEFT\n\n", cashLeft);
     printf("MONDAY MARCH 29 1847\n\n");
     
-    int 
+    //int 
     while(1) { // 1740 REM ***BEGINNING EACH TURN***
         // 1750 IF F >= 0 THEN 1770
         if(foodSpending<0){
