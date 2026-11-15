@@ -78,10 +78,15 @@ int main() {
         turnNumberDateSet == D3 TURN NUMBER FOR SETTING DATE
     */
     
-    
+    int animalSpending; // animalSpending == A.
+    int foodSpending; // foodSpending == F.
+    int ammoSpending; // ammoSpending == B.
+    int clothingSpending; // clothingSpending == C.
+    int miscSpending; // miscSpending == M1.
+    int cashLeft; // cashLeft == T
+
     while(1){
         printf("\n\n"); // 830
-        int animalSpending; // animalSpending == A.
         while(1){
             printf("HOW MUCH DO YOU WANT TO SPEND ON YOUR OXEN TEAM\n"); // 850
             // 860 INPUT A - "amount spent on animals"
@@ -99,7 +104,6 @@ int main() {
         } // end 920
 
     // 930 PRINT "HOW MUCH DO YOU WANT TO SPEND ON FOOD";
-        int foodSpending; // foodSpending == F.
         while(1){
             printf("HOW MUCH DO YOU WANT TO SPEND ON FOOD\n"); // 930
             scanf("%d", &foodSpending);
@@ -113,7 +117,6 @@ int main() {
 
 
     // 980 PRINT "HOW MUCH DO YOU WANT TO SPEND ON AMMUNITION";
-        int ammoSpending; // ammoSpending == B.
         while(1){
             printf("HOW MUCH DO YOU WANT TO SPEND ON AMMUNITION\n"); // 980
             scanf("%d", &ammoSpending);
@@ -127,7 +130,6 @@ int main() {
 
 
     // 1030 PRINT "HOW MUCH DO YOU WANT TO SPEND ON CLOTHING";
-        int clothingSpending; // clothingpending == C.
         while(1){
             printf("HOW MUCH DO YOU WANT TO SPEND ON CLOTHING\n"); // 1030
             scanf("%d", &clothingSpending);
@@ -140,7 +142,6 @@ int main() {
         } // end 1070
         
     // 1080 PRINT "HOW MUCH DO YOU WANT TO SPEND ON MISCELLANEOUS SUPPLIES";
-        int miscSpending; // miscSpending == M1.
         while(1){
             printf("HOW MUCH DO YOU WANT TO SPEND ON MISCELLANEOUS SUPPLIES\n"); // 1080
             scanf("%d", &miscSpending);
@@ -153,7 +154,7 @@ int main() {
         } // end 1120
 
     // 1130 T=700-A-F-B-C-M1
-        int cashLeft = 700-animalSpending-foodSpending-ammoSpending-clothingSpending-miscSpending; // cashLeft == T
+        cashLeft = 700-animalSpending-foodSpending-ammoSpending-clothingSpending-miscSpending; // 1130
         //printf("You have %d left", cashLeft); // DEBUG
         // 1140 IF T >= 0 THEN 1170
         // 1150 PRINT "YOU OVERSPENT--YOU ONLY HAD $700 TO SPEND.  BUY AGAIN"
@@ -165,19 +166,175 @@ int main() {
             break;
         }
     }
-    //printf("debug: broke loop");
-    // 1170 B=50*B
 
-    //printf("\n");
+    ammoSpending = ammoSpending*50; // 1170 B=50*B
+
+    printf("AFTER ALL YOUR PURCHASES, YOU NOW HAVE \"%d\" DOLLARS LEFT\n\n", cashLeft);
+    printf("MONDAY MARCH 29 1847\n\n");
+    
+    int 
+    while(1) { // 1740 REM ***BEGINNING EACH TURN***
+        // 1750 IF F >= 0 THEN 1770
+        if(foodSpending<0){
+            foodSpending=0;
+        }
+        if(ammoSpending<0){
+            ammoSpending=0;
+        }
+        if(clothingSpending<0){
+            clothingSpending=0;
+        }
+        if(miscSpending<0){
+            miscSpending=0;
+        }
+        if(foodSpending<13){
+            printf("YOU'D BETTER DO SOME HUNTING OR BUY FOOD AND SOON!!!!\n"); // 1840 PRINT "YOU'D BETTER DO SOME HUNTING OR BUY FOOD AND SOON!!!!"
+        }
+        
+    }
+// 1740 REM ***BEGINNING EACH TURN***
+// 1750 IF F >= 0 THEN 1770
+// 1760 F=0
+// 1770 IF B >= 0 THEN 1790
+// 1780 B=0
+// 1790 IF C >= 0 THEN 1810
+// 1800 C=0
+// 1810 IF M1 >= 0 THEN 1830
+// 1820 M1=0
+// 1830 IF F >= 13 THEN 1850
+
+// 1850 F=INT(F) // these shouldnt be necessary as I declared the variables as ints already
+// 1860 B=INT(B)
+// 1870 C=INT(C)
+// 1880 M1=INT(M1)
+// 1890 T=INT(T)
+// 1900 M=INT(M)
+
+// 1910 M2=M
+// 1920 IF S4=1 THEN 1950
+// 1930 IF K8=1 THEN 1950
+// 1940 GOTO 1990
+// 1950 T=T-20
+// 1960 IF T<0 THEN 5080
+
+// 1220 GOTO 1750
+// 1230 IF M >= 2040 THEN 5430 // totalTripMileage>=2040; 5430 Can be handled at its step
+// 1240 REM ***SETTING DATE***
+// 1250 D3=D3+1
+// 1260 PRINT
+// 1270 PRINT "MONDAY ";
+// 1280 IF D3>10 THEN 1300
+// 1290 ON D3 GOTO 1310,1330,1350,1370,1390,1410,1430,1450,1470,1490
+// 1300 ON D3-10 GOTO 1510,1530,1550,1570,1590,1610,1630,1650,1670,1690
+// 1310 PRINT "APRIL 12 ";
+// 1320 GOTO 1720
+// 1330 PRINT "APRIL 26 ";
+// 1340 GOTO 1720
+// 1350 PRINT "MAY 10 ";
+// 1360 GOTO 1720
+// 1370 PRINT "MAY 24 ";
+// 1380 GOTO 1720
+// 1390 PRINT "JUNE 7 ";
+// 1400 GOTO 1720
+// 1410 PRINT "JUNE 21 ";
+// 1420 GOTO 1720
+// 1430 PRINT "JULY 5 ";
+// 1440 GOTO 1720
+// 1450 PRINT "JULY 19 ";
+// 1460 GOTO 1720
+// 1470 PRINT "AUGUST 2 ";
+// 1480 GOTO 1720
+// 1490 PRINT "AUGUST 16 ";
+// 1500 GOTO 1720
+// 1510 PRINT "AUGUST 31 ";
+// 1520 GOTO 1720
+// 1530 PRINT "SEPTEMBER 13 ";
+// 1540 GOTO 1720
+// 1550 PRINT "SEPTEMBER 27 ";
+// 1560 GOTO 1720
+// 1570 PRINT "OCTOBER 11 ";
+// 1580 GOTO 1720
+// 1590 PRINT "OCTOBER 25 ";
+// 1600 GOTO 1720
+// 1610 PRINT "NOVEMBER 8 ";
+// 1620 GOTO 1720
+// 1630 PRINT "NOVEMBER 22 ";
+// 1640 GOTO 1720
+// 1650 PRINT "DECEMBER 6 ";
+// 1660 GOTO 1720
+// 1670 PRINT "DECEMBER 20 ";
+// 1680 GOTO 1720
+// 1690 PRINT "YOU HAVE BEEN ON THE TRAIL TOO LONG  ------"
+// 1700 PRINT "YOUR FAMILY DIES IN THE FIRST BLIZZARD OF WINTER"
+// 1710 GOTO 5170
+// 1720 PRINT "1847"
+// 1730 PRINT
+// 1740 REM ***BEGINNING EACH TURN***
+// 1750 IF F >= 0 THEN 1770
+// 1760 F=0
+// 1770 IF B >= 0 THEN 1790
+// 1780 B=0
+// 1790 IF C >= 0 THEN 1810
+// 1800 C=0
+// 1810 IF M1 >= 0 THEN 1830
+// 1820 M1=0
+// 1830 IF F >= 13 THEN 1850
+// 1840 PRINT "YOU'D BETTER DO SOME HUNTING OR BUY FOOD AND SOON!!!!"
+// 4960 Calls back to 1230. so that might all have to be a loop
+
     return 0;
 }
 
-// 930 PRINT "HOW MUCH DO YOU WANT TO SPEND ON FOOD";
-// 940 INPUT F
-// 950 IF F >= 0 THEN 980
-// 960 PRINT "IMPOSSIBLE"
-// 970 GOTO 930
-
+int setDate() { // intended to deal with 
+// 1260 PRINT
+// 1270 PRINT "MONDAY ";
+    printf("\n");
+    return 0;
+// 1280 IF D3>10 THEN 1300
+// 1290 ON D3 GOTO 1310,1330,1350,1370,1390,1410,1430,1450,1470,1490
+// 1300 ON D3-10 GOTO 1510,1530,1550,1570,1590,1610,1630,1650,1670,1690
+// 1310 PRINT "APRIL 12 ";
+// 1320 GOTO 1720
+// 1330 PRINT "APRIL 26 ";
+// 1340 GOTO 1720
+// 1350 PRINT "MAY 10 ";
+// 1360 GOTO 1720
+// 1370 PRINT "MAY 24 ";
+// 1380 GOTO 1720
+// 1390 PRINT "JUNE 7 ";
+// 1400 GOTO 1720
+// 1410 PRINT "JUNE 21 ";
+// 1420 GOTO 1720
+// 1430 PRINT "JULY 5 ";
+// 1440 GOTO 1720
+// 1450 PRINT "JULY 19 ";
+// 1460 GOTO 1720
+// 1470 PRINT "AUGUST 2 ";
+// 1480 GOTO 1720
+// 1490 PRINT "AUGUST 16 ";
+// 1500 GOTO 1720
+// 1510 PRINT "AUGUST 31 ";
+// 1520 GOTO 1720
+// 1530 PRINT "SEPTEMBER 13 ";
+// 1540 GOTO 1720
+// 1550 PRINT "SEPTEMBER 27 ";
+// 1560 GOTO 1720
+// 1570 PRINT "OCTOBER 11 ";
+// 1580 GOTO 1720
+// 1590 PRINT "OCTOBER 25 ";
+// 1600 GOTO 1720
+// 1610 PRINT "NOVEMBER 8 ";
+// 1620 GOTO 1720
+// 1630 PRINT "NOVEMBER 22 ";
+// 1640 GOTO 1720
+// 1650 PRINT "DECEMBER 6 ";
+// 1660 GOTO 1720
+// 1670 PRINT "DECEMBER 20 ";
+// 1680 GOTO 1720
+// 1690 PRINT "YOU HAVE BEEN ON THE TRAIL TOO LONG  ------"
+// 1700 PRINT "YOUR FAMILY DIES IN THE FIRST BLIZZARD OF WINTER"
+// 1710 GOTO 5170
+}
 // --------------------------
 // printf("\n");
 // 6470 REM ***IDENDIFICATION OF VARIABLES IN THE PROGRAM***
